@@ -16,22 +16,26 @@
    ```
    reverse-proxy/
    ├── src/
-   │   ├── main.c              # 프로그램 시작점
-   │   ├── proxy/
-   │   │   ├── proxy.h        # 프록시 서버 핵심 기능
-   │   │   └── proxy.c
-   │   ├── connection/
-   │   │   ├── connection.h   # 연결 관리 (백엔드 서버와의 연결)
-   │   │   └── connection.c
-   │   └── utils/
-   │       ├── config.h       # 설정 관리 (포트 번호 등)
-   │       ├── config.c
-   │       ├── logger.h       # 로깅
-   │       └── logger.c
+   │   └── version1/
+   │       ├── proxy/
+   │       │   ├── proxy.h
+   │       │   └── proxy.c
+   │       ├── connection/
+   │       │   ├── connection.h
+   │       │   └── connection.c
+   │       ├── utils/
+   │       │   ├── config.h
+   │       │   ├── config.c
+   │       │   ├── logger.h
+   │       │   └── logger.c
+   │       ├── main.c
+   │       ├── Makefile         # 버전1의 Makefile
+   │       └── README.md
+   │   └── version2/
    ├── tests/
-   │   ├── proxy_test.c
-   │   └── connection_test.c
-   ├── Makefile
+   │   └── version1/
+   │       ├── proxy_test.c
+   │       └── connection_test.c
    └── README.md
    ```
 
@@ -40,27 +44,31 @@
    ```
    http-server/
    ├── src/
-   │   ├── main.c              # 프로그램 시작점
-   │   ├── server/
-   │   │   ├── server.h       # HTTP 서버 핵심 기능
-   │   │   └── server.c
-   │   ├── document/
-   │   │   ├── document.h     # 문서 조회 기능
-   │   │   └── document.c
-   │   ├── http/
-   │   │   ├── parser.h       # HTTP 요청 파싱
-   │   │   └── parser.c
-   │   └── utils/
-   │       ├── config.h       # 설정 (포트, 문서 디렉토리 경로 등)
-   │       ├── config.c
-   │       ├── logger.h
-   │       └── logger.c
+   │   └── version1/
+   │       ├── server/
+   │       │   ├── server.h
+   │       │   └── server.c
+   │       ├── document/
+   │       │   ├── document.h
+   │       │   └── document.c
+   │       ├── http/
+   │       │   ├── parser.h
+   │       │   └── parser.c
+   │       ├── utils/
+   │       │   ├── config.h
+   │       │   ├── config.c
+   │       │   ├── logger.h
+   │       │   └── logger.c
+   │       ├── main.c
+   │       ├── Makefile         # 버전1의 Makefile
+   │       └── README.md
+   │   └── version2/
    ├── tests/
-   │   ├── server_test.c
-   │   ├── document_test.c    # 문서 조회 테스트
-   │   └── parser_test.c
-   ├── data/                   # 문서 저장 디렉토리
-   ├── Makefile
+   │   └── version1/
+   │       ├── server_test.c
+   │       ├── document_test.c
+   │       └── parser_test.c
+   ├── docs/                    # 문서 저장
    └── README.md
    ```
 
@@ -69,25 +77,29 @@
    ```
    client/
    ├── src/
-   │   ├── main.c              # 프로그램 시작점
-   │   ├── client/
-   │   │   ├── client.h       # 클라이언트 핵심 기능
-   │   │   └── client.c
-   │   ├── http/
-   │   │   ├── request.h      # HTTP 요청 생성
-   │   │   ├── request.c
-   │   │   ├── response.h     # HTTP 응답 처리
-   │   │   └── response.c
-   │   └── utils/
-   │       ├── config.h       # 설정 (서버 주소, 포트 등)
-   │       ├── config.c
-   │       ├── logger.h
-   │       └── logger.c
+   │   └── version1/
+   │       ├── client/
+   │       │   ├── client.h
+   │       │   └── client.c
+   │       ├── http/
+   │       │   ├── request.h
+   │       │   ├── request.c
+   │       │   ├── response.h
+   │       │   └── response.c
+   │       ├── utils/
+   │       │   ├── config.h
+   │       │   ├── config.c
+   │       │   ├── logger.h
+   │       │   └── logger.c
+   │       ├── main.c
+   │       ├── Makefile         # 버전1의 Makefile
+   │       └── README.md
+   │   └── version2/
    ├── tests/
-   │   ├── client_test.c
-   │   ├── request_test.c
-   │   └── response_test.c
-   ├── Makefile
+   │   └── version1/
+   │       ├── client_test.c
+   │       ├── request_test.c
+   │       └── response_test.c
    └── README.md
    ```
 
