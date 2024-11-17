@@ -1,12 +1,9 @@
-## Hi there 👋
+## 프로젝트 개요
 
-<!--
+저희 프로젝트 NginxX는 버전별로 개발을 진행중입니다!
 
-**Here are some ideas to get you started:**
+### Version 1
 
-🙋‍♀️ A short introduction - what is your organization all about?
-🌈 Contribution guidelines - how can the community get involved?
-👩‍💻 Useful resources - where can the community find your docs? Is there anything else the community should know?
-🍿 Fun facts - what does your team eat for breakfast?
-🧙 Remember, you can do mighty things with the power of [Markdown](https://docs.github.com/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax)
--->
+싱글 스레드로 클라이언트, HTTP 서버, 리버스 프록시 서버를 구현하고 성능평가를 해보는 단계
+
+[v1 개발 과정 보기](../version1.md)
