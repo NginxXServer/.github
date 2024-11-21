@@ -2,12 +2,14 @@
 
 1. OS 레벨 리다이렉션
    - 클라이언트가 HTTP 서버로 요청을 보내면 OS 레벨에서 자동으로 리버스 프록시 서버로 리다이렉션
-   - `iptables -t nat -A PREROUTING -p tcp --dport 39020 -j REDIRECT --to-port 39071` 와 같이 iptable을 설정하는 권한이 필요함.
+   - `iptables -t nat -A PREROUTING -p tcp --dport 39020 -j REDIRECT --to-port 39071` 와 같이 iptable을 설정하는 권한이 필요함
 2. HTTP 서버 리다이렉션
    - HTTP 서버가 요청을 받으면 리버스 프록시 서버로 리다이렉션
-   - 구현이 간단하지만 요청이 HTTP 서버까지 갔다가 리버스 프록시 서버로 돌아오므로 성능 저하 우려가 있음.
+   - 구현이 간단하지만 요청이 HTTP 서버까지 갔다가 리버스 프록시 서버로 돌아오므로 성능 저하 우려가 있음
 3. 클라이언트가 리버스 프록시로 직접 요청
-   - 구현이 간단하지만 클라이언트가 리버스 프록시 서버의 주소(포트 번호)를 알아야 함.
+   - 구현이 간단하지만 클라이언트가 리버스 프록시 서버의 주소(포트 번호)를 알아야 함
+
+HTTP 서버는 swist1, 리버스 프록시 서버는 swist2에서 개발 진행
 
 ### 패키지 설계
 
@@ -104,3 +106,38 @@
    ```
 
 ### 인터페이스 설계
+
+1. 서버 응답
+
+   ```json
+   (1)문서가 존재하는 경우
+   HTTP/1.1 200 OK
+   Content-Type: application/json
+
+   {
+       "docName": "example",
+       "content": "This is the content of the example document."
+   }
+
+   (2)문서가 존재하지 않는 경우
+   HTTP/1.1 404 Not Found
+   Content-Type: application/json
+
+   {
+       "error": "Document not found"
+   }
+
+   에러코드는 4xx(클라이언트), 5xx(서버) 우선 구현
+   ```
+
+2. 로그 형식
+
+   ```python
+   [2024-11-21 14:30:15][INFO] 서버 시작: 포트 8080
+   [2024-11-21 14:30:20][INFO] Client IP: 192.168.1.100, Status: 200, Response: {"docName": "example", "content": "..."}
+   [2024-11-21 14:30:25][ERROR] Client IP: 192.168.1.101, Status: 404, Response: {"error": "Document not found"}
+   ```
+
+3. 버퍼의 크기
+   - 클라이언트 요청 : 8192
+   - 서버의 응답 : 9999
