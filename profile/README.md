@@ -46,6 +46,10 @@
 
 ### Version 2
 
+- 분산형 HTTP 서버, 서버 헬스체크, RR을 이용한 로드밸런싱 개발 및 통합 테스트 진행
+
+- [v2 개발 과정 보기](../v2/version2.md)
+
 ## 🔗 Repository
 
 - [HTTP Server](https://github.com/NginxXServer/NginxX-HttpServer)

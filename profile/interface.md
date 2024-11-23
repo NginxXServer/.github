@@ -25,20 +25,19 @@ HTTP 서버는 swist1, 리버스 프록시 서버는 swist2에서 개발 진행
    │       ├── connection/
    │       │   ├── connection.h
    │       │   └── connection.c
+   │       ├── monitoring/
+   │       │   ├── health.h
+   │       │   ├── health.c
+   │       │   ├── metrics.h
+   │       │   └── metrics.c
    │       ├── utils/
    │       │   ├── config.h
    │       │   ├── config.c
    │       │   ├── logger.h
    │       │   └── logger.c
    │       ├── main.c
-   │       ├── Makefile         # 버전1의 Makefile
+   │       ├── Makefile
    │       └── README.md
-   │   └── version2/
-   ├── tests/
-   │   └── version1/
-   │       ├── proxy_test.c
-   │       └── connection_test.c
-   └── README.md
    ```
 
 2. HTTP 서버
