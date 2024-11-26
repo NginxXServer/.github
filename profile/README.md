@@ -50,6 +50,11 @@
 
 - [v2 개발 과정 보기](../v2/version2.md)
 
+### Version 2.1
+
+- 리버스 프록시 구조 변경 (싱글 스레드 -> 멀티 스레드)
+- [v2.1 개발 과정 보기](../v2.1/READEME.md)
+
 ## 🔗 Repository
 
 - [HTTP Server](https://github.com/NginxXServer/NginxX-HttpServer)
