@@ -5,7 +5,7 @@
 1. 기본적인 HTTP 요청, 응답 처리
    - GET 요청에 대해서 클라이언트의 입력에 따른 document를 반환
 2. HTTP 메소드 구분
-   - 단, content-type은 JSON만 다룸
+   - 단, content-type은 JSON, html, image만 지원
 3. 로드밸런서, 리버스 프록시
 4. 서버 헬스 체크
 
