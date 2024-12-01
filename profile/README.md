@@ -69,8 +69,7 @@
 
 | 항목                 | v2                   | v3                                    | v4                      |
 | -------------------- | -------------------- | ------------------------------------- | ----------------------- |
-| **이벤트 처리 방식** | 없음 (순차처리)      | Edge Trigger (ET) +                   |
-| Level Trigger(LT)    | Level Trigger (LT)   |
+| **이벤트 처리 방식** | 없음 (순차처리)      | Edge Trigger (ET) + Level Trigger(LT) | Level Trigger (LT)      |
 | **소켓 모드**        | Blocking             | Non-blocking + blocking               | Non-blocking + blocking |
 | **병렬 처리**        | 없음 (단일 프로세스) | epoll로 다중 처리                     | Thread Pool 사용        |
 | **accept 처리**      | Blocking             | Non-blocking (while 루프로 모두 처리) | Blocking (한번에 하나)  |
