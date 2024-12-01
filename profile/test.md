@@ -13,8 +13,8 @@
 3. wrk는 같은 연결이 살아있다고 생각하고 다시 요청을 보냄
 4. 하지만 연결은 이미 닫혔으므로 read error 발생
 
-따라서 socket errors: read가 굉장히 발생한다는 문제가 있었다.
-![alt text](./error.png)
+따라서 socket errors: read가 굉장히 발생한다는 문제가 있었다.  
+![alt text](./error.png)  
 <br/>
 <br/>
 다음으로 keep alive를 사용하는 wrk 보다, 각 연결에 대해 더 명확한 생명주기를 관리하고 기본적으로 연결을 재사용하지 않는 ab가 우리 프로젝트에 좀 더 잘 맞는 테스트 도구이기에 테스트 도구를 ab로 변경하였다.

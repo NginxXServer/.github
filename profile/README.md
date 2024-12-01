@@ -22,8 +22,9 @@
 
 ### **Siege**
 
-[Why Seige?](./test.md)  
-주요 비교 사항
+##### [Why Seige?](./test.md)
+
+주요 테스트 항목
 
 - transactions(총 거래 횟수)
 - 여기 채워주쇼 @ 정한울
