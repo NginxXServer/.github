@@ -6,7 +6,7 @@
 2. HTTP 서버 리다이렉션
    - HTTP 서버가 요청을 받으면 리버스 프록시 서버로 리다이렉션
    - 구현이 간단하지만 요청이 HTTP 서버까지 갔다가 리버스 프록시 서버로 돌아오므로 성능 저하 우려가 있음.
-3. **클라이언트가 리버스 프록시로 직접 요청**
+3. **클라이언트가 리버스 프록시로 직접 요청** (선택됨)
    - 구현이 간단하지만 클라이언트가 리버스 프록시 서버의 주소(포트 번호)를 알아야 함.
 
 ### 패키지 설계
@@ -23,14 +23,12 @@
    │       ├── connection/
    │       │   ├── connection.h
    │       │   └── connection.c
-   │     ├── monitoring/
-   │      │   ├── health.h
-   │      │   ├── health.c
-   │      │   ├── metrics.h
-   │      │   └── metrics.c
+   │       ├── monitoring/
+   │       │   ├── health.h
+   │       │   ├── health.c
+   │       │   ├── metrics.h
+   │       │   └── metrics.c
    │       ├── utils/
-   │       │   ├── config.h
-   │       │   ├── config.c
    │       │   ├── logger.h
    │       │   └── logger.c
    │       ├── main.c
@@ -54,8 +52,6 @@
    │       │   ├── parser.h
    │       │   └── parser.c
    │       ├── utils/
-   │       │   ├── config.h
-   │       │   ├── config.c
    │       │   ├── logger.h
    │       │   └── logger.c
    │       ├── main.c
@@ -86,19 +82,12 @@
    │       │   ├── response.h
    │       │   └── response.c
    │       ├── utils/
-   │       │   ├── config.h
-   │       │   ├── config.c
    │       │   ├── logger.h
    │       │   └── logger.c
    │       ├── main.c
    │       ├── Makefile         # 버전1의 Makefile
    │       └── README.md
    │   └── version2/
-   ├── tests/
-   │   └── version1/
-   │       ├── client_test.c
-   │       ├── request_test.c
-   │       └── response_test.c
    └── README.md
    ```
 
@@ -124,7 +113,6 @@
        "error": "Document not found"
    }
 
-   에러코드는 4xx(클라이언트), 5xx(서버) 우선 구현
    ```
 
 2. 로그 형식

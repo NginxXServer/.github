@@ -1,8 +1,8 @@
 # 김지유
 
-### HTTP 서버 동작 변경
+### HTTP 서버가 지원하는 content type 변경
 
-현재 JSON만 지원하는 구조에서 html, image 등의 타입 또한 지원하도록 변경.
+현재 JSON만 지원하는 구조에서 html, image 타입 또한 지원하도록 변경
 
 # 조준화
 

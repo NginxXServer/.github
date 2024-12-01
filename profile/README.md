@@ -6,7 +6,7 @@
    - GET 요청에 대해서 클라이언트의 입력에 따른 document를 반환
 2. HTTP 메소드 구분
    - 단, content-type은 JSON, html, image만 지원
-3. 로드밸런서, 리버스 프록시
+3. 로드밸런서 (RR, LC), 리버스 프록시
 4. 서버 헬스 체크
 
 ### 특장점
@@ -20,16 +20,13 @@
 
 ## 💡 프로젝트 평가
 
-**wrk**
+### **Siege**
 
-- 다른 웹 서버 벤치마크에 비해 가벼우면서도 마이크로초 단위의 정밀한 타이밍 측정이 가능하고 통계 데이터, 상세한 에러 리포팅을 제공
+[Why Seige?](./test.md)  
+주요 비교 사항
 
-- wrk를 통한 Throughput, 응답 시간, 에러율, 동시 사용자 수 평가
-
-- 정적 부하 테스트, 최대 부하 테스트, 스파이크 테스트 진행
-
-- wrk를 활용한 테스트 자동화 구현 예정
-- wrk의 결과를 바탕으로 각 버전별 그래프를 생성하여 시각적으로 성능 변화를 확인하고 최대한 성능을 개선하는 것이 목표
+- transactions(총 거래 횟수)
+- 여기 채워주쇼 @ 정한울
 
 ## 🗂️ System Architecture
 
@@ -52,15 +49,35 @@
 
 ### Version 2.1
 
-- 리버스 프록시 구조 변경 (싱글 스레드 -> 멀티 스레드), HTTP 서버 동작 변경 (json만 지원 -> 이미지, html 등 지원)
+- 리버스 프록시 구조 변경 (싱글 스레드 -> 멀티 스레드), HTTP 서버가 지원하는 content type 변경 (json만 지원 -> 이미지, html 지원)
 
 - [v2.1 개발 과정 보기](../v2.1/READEME.md)
 
 ### Version 3
 
-- LC를 이용한 로드밸런싱, epoll 기반의 통신으로 변경
+- LC를 이용한 로드밸런싱 추가 및 epoll 기반의 비동기 통신 사용
 
 - [v3 개발 과정 보기](../v3/READEME.md)
+
+### Version 4
+
+- HTTP, 리버스 프록시 서버에 스레드 풀 적용
+
+- [v4 개발 과정 보기](../v4/READEME.md)
+
+## Versions 비교
+
+| 항목                 | v2                   | v3                                    | v4                      |
+| -------------------- | -------------------- | ------------------------------------- | ----------------------- |
+| **이벤트 처리 방식** | 없음 (순차처리)      | Edge Trigger (ET) +                   |
+| Level Trigger(LT)    | Level Trigger (LT)   |
+| **소켓 모드**        | Blocking             | Non-blocking + blocking               | Non-blocking + blocking |
+| **병렬 처리**        | 없음 (단일 프로세스) | epoll로 다중 처리                     | Thread Pool 사용        |
+| **accept 처리**      | Blocking             | Non-blocking (while 루프로 모두 처리) | Blocking (한번에 하나)  |
+| **I/O 처리**         | 동기 (Blocking)      | 비동기 (Non-blocking)                 | 동기 (Thread Pool에서)  |
+| **동시성**           | 단일 스레드          | 이벤트 기반                           | 이벤트 + Thread Pool    |
+
+<br>
 
 ## 🔗 Repository
 
