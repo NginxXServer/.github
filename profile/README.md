@@ -24,7 +24,7 @@
 
 ##### [Why Seige?](./test.md)
 
-주요 테스트 항목
+#### 주요 테스트 항목
 
 - Transactions : 클라이언트가 서버로 전송한 HTTP 요청 중 처리된 요청 수 
 - Availability : 서버가 성공적으로 요청을 처리한 비율
