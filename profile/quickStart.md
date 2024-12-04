@@ -7,6 +7,33 @@
 
 <br/>
 
+## 버전 설명
+
+### Version 1
+
+- 리버스 프록시 서버와 HTTP 서버 모두 단일 프로세스, 순차 처리
+
+### Version 2
+
+- 리버스 프록시 서버는 싱글 스레드, 로드밸런싱(RR) 사용
+- HTTP 서버는 멀티 프로세스로 분산 실행
+
+### Version 2.1
+
+- 멀티 스레드(Thread per Connection) 리버스 프록시 서버 사용
+
+### Version 3
+
+- 리버스 프록시 서버는 멀티스레드 + epoll LT 사용
+
+- HTTP 서버는 멀티프로세스 + epoll ET 사용
+
+### Version 4
+
+- 리버스 프록시 서버와 HTTP 서버 모두 Thread Pool 사용
+
+<br/>
+
 ## Quick Start
 
 **1. git clone**
