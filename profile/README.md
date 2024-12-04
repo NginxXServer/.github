@@ -26,9 +26,9 @@
 
 #### 주요 테스트 항목
 
-- Transactions : 클라이언트가 서버로 전송한 HTTP 요청 중 처리된 요청 수 
+- Transactions : 클라이언트가 서버로 전송한 HTTP 요청 중 처리된 요청 수
 - Availability : 서버가 성공적으로 요청을 처리한 비율
-- Response time : 요청이 전송된 시점부터 서버의 응답을 받기까지  걸린 평균 시간
+- Response time : 요청이 전송된 시점부터 서버의 응답을 받기까지 걸린 평균 시간
 - Throughput : 단위 시간당 처리된 데이터 전송량
 - Concurrency : 테스트 동안 평균적으로 동시에 연결된 클라이언트 수
 
@@ -87,3 +87,7 @@
 - [HTTP Server](https://github.com/NginxXServer/NginxX-HttpServer)
 - [Reverse Proxy Server](https://github.com/NginxXServer/NginxX-ProxyServer)
 - [Client](https://github.com/NginxXServer/NginxX-Client)
+
+## Quick Start
+
+- [Quick Start](./quickStart.md)
