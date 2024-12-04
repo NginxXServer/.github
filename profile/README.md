@@ -31,6 +31,8 @@
 - Throughput : 단위 시간당 처리된 데이터 전송량
 - Concurrency : 테스트 동안 평균적으로 동시에 연결된 클라이언트 수
 
+##### [test results](https://github.com/NginxXServer/.github/tree/main/test_results)
+
 ## 🗂️ System Architecture
 
 ![system architecture](architecture.png)
