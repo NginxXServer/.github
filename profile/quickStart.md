@@ -76,8 +76,4 @@
 
 **4. 테스트**
 
-1. `NginxX-Client/src/test` 디렉토리의 `make`를 통해 생성된 실행파일 `run_siege` 실행
-
-- `siege.conf` : siege 설정을 변경할 수 있습니다.
-- `urls.txt` : 요청을 보낼 url들을 설정할 수 있습니다.
-- `main.c` : siege 테스트를 실행하는 코드입니다. 테스트 파라미터를 변경할 수 있습니다.
+- [How to Test](https://github.com/NginxXServer/NginxX-Client/blob/main/README.md)
