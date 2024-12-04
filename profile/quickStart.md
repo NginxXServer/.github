@@ -40,7 +40,7 @@
 
 - siege를 통한 테스트를 위해서는 [NginxX-Client](https://github.com/NginxXServer/NginxX-Client)를 받아야 합니다.
 
-- 사용을 위해서는 [NginxX-ProxyServer](https://github.com/NginxXServer/NginxX-ProxyServer),[NginxX-HttpServer](https://github.com/NginxXServer/NginxX-HttpServer)를 받아야 합니다.
+- 사용을 위해서는 [NginxX-ProxyServer](https://github.com/NginxXServer/NginxX-ProxyServer), [NginxX-HttpServer](https://github.com/NginxXServer/NginxX-HttpServer)를 받아야 합니다.
 
 **2. Build**
 
