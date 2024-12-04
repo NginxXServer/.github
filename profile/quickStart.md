@@ -15,12 +15,8 @@
 
 ### Version 2
 
-- 리버스 프록시 서버는 싱글 스레드, 로드밸런싱(RR) 사용
+-  리버스 프록시 서버는 멀티 스레드(Thread per Connection), 로드밸런싱(RR) 사용
 - HTTP 서버는 멀티 프로세스로 분산 실행
-
-### Version 2.1
-
-- 멀티 스레드(Thread per Connection) 리버스 프록시 서버 사용
 
 ### Version 3
 
