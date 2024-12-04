@@ -89,6 +89,6 @@
 - [Reverse Proxy Server](https://github.com/NginxXServer/NginxX-ProxyServer)
 - [Client](https://github.com/NginxXServer/NginxX-Client)
 
-## Quick Start
+## 🚀 Quick Start
 
 - [Quick Start](./quickStart.md)
